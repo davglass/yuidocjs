@@ -62,31 +62,31 @@
 </div>
 {{/if}}
 
-{{#if props}}
-<div id="props-on-page" class="sidebox">
+{{#if properties}}
+<div id="props-on-page" class="sidebox on-page">
     <div class="hd">
-        <h2 class="no-toc">Props On Page</h2>
+        <h2 class="no-toc">Properties On Page</h2>
     </div>
     <div class="bd">
         <ul>
-            {{#events}}
+            {{#properties}}
                 <li><a href="#props_{{name}}">{{name}}</a></li>
-            {{/events}}
+            {{/properties}}
         </ul>
     </div>
 </div>
 {{/if}}
 
-{{#if attributes}}
+{{#if attrs}}
 <div id="attrs-on-page" class="sidebox on-page">
     <div class="hd">
         <h2 class="no-toc">Attributes On Page</h2>
     </div>
     <div class="bd">
         <ul>
-            {{#events}}
+            {{#attrs}}
                 <li><a href="#attrs_{{name}}">{{name}}</a></li>
-            {{/events}}
+            {{/attrs}}
         </ul>
     </div>
 </div>
@@ -102,4 +102,10 @@
     </div>
 </div>
 {{/if}}
+
+<div id="back-to-top" class="sidebox">
+	<div class="hd">
+	    <h2 class="no-toc"><a href="#">Back to top</a></h2>
+	</div>
+</div>
 
