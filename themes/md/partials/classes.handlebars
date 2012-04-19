@@ -1,0 +1,74 @@
+# {{name}} Class
+{{#if uses}}
+Uses
+{{#uses}}
+   * ({{.}})[{{.}}.html]
+{{/uses}}
+{{/if}}
+
+{{#if extends}}
+Extends ({{extends}})[{{#crossLinkRaw extends}}{{/crossLinkRaw}}]
+{{/if}}
+
+{{#if foundAt}}
+Defined in: `({{{file}}}:{{{line}}})[{{foundAt}}]`
+{{/if}}
+
+{{#if module}}
+    {{#if submodule}}
+Module: {{submodule}}
+Parent Module: {{module}}
+        {{else}}
+Module: {{module}}
+    {{/if}}
+{{/if}}
+
+{{#if since}}
+Available since {{since}}
+{{/if}}
+
+{{#if deprecated}}
+{{#if deprecationMessage}}
+*Deprecated:* {{deprecationMessage}}
+{{else}}
+This class is deprecated.
+{{/if}}
+{{/if}}
+
+{{{classDescription}}}
+
+{{#is_constructor}}
+## Constructor
+{{>method}}
+{{/is_constructor}}
+
+
+{{#if methods}}
+## Methods
+
+{{#methods}}
+{{>method}}
+{{/methods}}
+{{/if}}
+
+{{#if properties}}
+## Properties
+
+{{#properties}}
+{{>props}}
+{{/properties}}
+{{/if}}
+
+{{#if attrs}}
+## Attributes
+{{#attrs}}
+{{>attrs}}
+{{/attrs}}
+{{/if}}
+
+{{#if events}}
+## Events
+{{#events}}
+{{>events}}
+{{/events}}
+{{/if}}

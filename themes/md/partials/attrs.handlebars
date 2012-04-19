@@ -1,0 +1,73 @@
+### `{{name}}` {{type}}
+
+{{#if deprecated}}
+__deprecated__
+{{/if}}
+{{#if access}}
+__{{access}}__
+{{/if}}
+{{#if final}}
+__final__
+{{/if}}
+{{#if static}}
+__static__
+{{/if}}
+
+{{#if overwritten_from}}
+    Inherited from [{{overwritten_from/class}}]({{crossLinkRaw overwritten_from/class}}#attr_{{overwritten_from/name}}) {{#if foundAt}} but overwritten in {{#if foundAt}}  `({{{file}}}:{{{line}}})[{{foundAt}}]`{{/if}}{{/if}}
+{{else}}
+    {{#if extended_from}}
+Inherited from [{{extended_from}}]({{crossLinkRaw extended_from}}#attr_{{name}}): {{#if foundAt}}  `({{{file}}}:{{{line}}})[{{foundAt}}]`{{/if}}
+    {{else}}
+        {{#providedBy}}
+Provided by the [{{.}}](../modules/{{.}}.html) module.
+        {{/providedBy}}
+        {{#if foundAt}}
+Defined in {{#if foundAt}}  `({{{file}}}:{{{line}}})[{{foundAt}}]`{{/if}}
+        {{/if}}
+    {{/if}}
+{{/if}}
+
+{{#if deprecationMessage}}
+Deprecated: {{deprecationMessage}}
+{{/if}}
+
+{{#if since}}
+Available since {{since}}
+{{/if}}
+
+{{{attrDescription}}}
+
+{{#if default}}
+*Default*: {{default}}
+{{/if}}
+
+{{#if emit}}
+#### Fires event `{{name}}Change`
+           
+Fires when the value for the configuration attribute `{{{name}}}` is
+changed. You can listen for the event using the `on` method if you
+wish to be notified before the attribute's value has changed, or
+using the `after` method if you wish to be notified after the
+attribute's value has changed.
+            
+
+#### Parameters:
+
+`e` (EventFacade)[{{#crossLinkRaw "EventFacade"}}{{/crossLinkRaw}}]
+
+An Event Facade object with the following attribute-specific properties added:
+
+   * `prevVal` Any The value of the attribute, prior to it being set.
+   * `newVal` Any The value the attribute is to be set to.
+   * `attrName` String The name of the attribute being set.
+   * `subAttrName` String If setting a property within the attribute's value, the name of the sub-attribute property being set.
+
+{{/if}}
+
+{{#example}}
+#### Example:
+    
+    {{{.}}}
+
+{{/example}}
